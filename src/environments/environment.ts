@@ -13,7 +13,8 @@ export const environment = {
     messagingSenderId: "276913588909",
     appId: "1:276913588909:web:6fab57222e95dfc9d95424",
     measurementId: "G-3S96QJ7P5S"
-  }
+  },
+  apiURL:'https://jsonplaceholder.typicode.com/'
 
 };
 
