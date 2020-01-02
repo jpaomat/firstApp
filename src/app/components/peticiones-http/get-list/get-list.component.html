@@ -1,0 +1,17 @@
+holaaaaaaaaaa
+<ng-container *ngIf="users">
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>title</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let users of users">
+    <tr>
+      <td>{{users.id}}</td>
+      <td>{{users.title}}</td>
+    </tr>
+  </tbody>
+</table>
+</ng-container>

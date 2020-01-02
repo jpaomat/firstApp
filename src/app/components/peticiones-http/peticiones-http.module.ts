@@ -11,3 +11,8 @@ import { GetListComponent } from './get-list/get-list.component'
   declarations: [PeticionesComponent, GetListComponent],
   imports: [
     CommonModule,
+    PeticionesHttpRoutingModule,
+    
+  ]
+})
+export class PeticionesHttpModule { }

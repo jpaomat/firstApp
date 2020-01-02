@@ -10,4 +10,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  import
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class PeticionesHttpRoutingModule { }
