@@ -6,8 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthInterceptorService {
+  //MODIFICANDO CABECERAS AUTOMATICAMENTE
   //ESTE SERVICIO SE TIENE QUE AGREGAR EN EL APP.MODULE (providers)
-  intercep(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
+
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
     console.log('http interceptor');
     req=req.clone({
       setHeaders:{'Authorization':'token http header'}//permite configurar la cabecera deseada

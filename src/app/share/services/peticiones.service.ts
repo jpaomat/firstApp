@@ -10,7 +10,7 @@ import { User } from '../interfaces/user';
 export class PeticionesService {
   baseURL= environment.apiURL+'posts/'
   constructor(private httpService: HttpClient) { }
-  getUser(id:string):Observable<User>{
+  getUser(id:string):Observable<User>{ //<Users> es el tipo de retorno del observable
     const url=this.baseURL+id;//se pone la url completa
     return this.httpService.get<User>(url);//se hace la peticion
   }
@@ -31,5 +31,8 @@ export class PeticionesService {
      let params= new HttpParams();
      params= params.append('Authorization','bearer token')
     return this.httpService.get<User[]>(this.baseURL,{params});
+  };
+  getUserWithHeaders():Observable<any>{
+    return this.httpService.get(this.baseURL,{observe: 'response'})
   }
 }

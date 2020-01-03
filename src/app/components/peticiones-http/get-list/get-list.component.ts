@@ -12,14 +12,24 @@ export class GetListComponent implements OnInit {
   constructor(private peticionService: PeticionesService) { }
 
   ngOnInit() {
-    this.peticionService.getUserList().subscribe((userList:User[])=>{
+    this.getUserList();//se obtiene el json normal con http get
+    //this.getUserListwithHeaders();//se obtiene el json leyendo la cabecera y codigo de estatus de la rta
+  };
+  getUserList(){
+     this.peticionService.getUserList().subscribe((userList:User[])=>{
       this.users=userList;
     },(err:any)=>{
       console.error(err);
     })
   };
-  getUserList(){
-    
+  getUserListwithHeaders(){
+    this.peticionService.getUserWithHeaders().subscribe((Response: any)=>{
+      console.log(Response);
+      this.users=Response.body;
+    },(err: any)=>{
+      console.error(err);
+      
+    })
   }
 
 }
