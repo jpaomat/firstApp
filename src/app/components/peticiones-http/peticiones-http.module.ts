@@ -3,16 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { PeticionesHttpRoutingModule } from './peticiones-http-routing.module';
 import { PeticionesComponent } from './peticiones/peticiones.component';
-import { HttpClientModule } from '@angular/common/http';
-import { GetListComponent } from './get-list/get-list.component'
+import { GetListComponent } from './get-list/get-list.component';
+import { HttpPostComponent } from './http-post/http-post.component'
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [PeticionesComponent, GetListComponent],
+  declarations: [PeticionesComponent, GetListComponent, HttpPostComponent],
   imports: [
     CommonModule,
     PeticionesHttpRoutingModule,
-    
+    FormsModule
   ]
 })
 export class PeticionesHttpModule { }

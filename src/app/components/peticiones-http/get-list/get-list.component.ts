@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PeticionesService } from 'src/app/share/services/peticiones.service';
 import { User } from 'src/app/share/interfaces/user';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-get-list',
@@ -30,6 +31,7 @@ export class GetListComponent implements OnInit {
       console.error(err);
       
     })
-  }
+  };
+  
 
 }

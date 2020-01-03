@@ -34,5 +34,8 @@ export class PeticionesService {
   };
   getUserWithHeaders():Observable<any>{
     return this.httpService.get(this.baseURL,{observe: 'response'})
-  }
+  };
+  postUser(user: User):Observable<User>{
+    return this.httpService.post<User>(this.baseURL,user);
+  };
 }

@@ -1,0 +1,29 @@
+<div class="container">
+  <form action="" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input 
+        type="text"  
+        id="id" 
+        placeholder="Ingrese el id" 
+        class="form-control"
+        required
+        [(ngModel)]="model.id"
+        name="id"
+        #id="ngModel"
+      >
+    </div>
+    <div class="form-group">
+      <label for="title">title</label>
+      <input type="text"
+      id="title"
+      name="title"
+        placeholder="ingrese el title"
+        class="form-control"
+        [(ngModel)]="model.title"
+      >
+    </div>
+    <button type="submit" class="btn btn-success">Send</button>
+  </form>
+
+</div>
