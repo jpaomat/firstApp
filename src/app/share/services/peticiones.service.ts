@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../interfaces/user';
+import { Operation } from 'fast-json-patch'
 
 @Injectable({
   providedIn: 'root'
@@ -38,4 +39,16 @@ export class PeticionesService {
   postUser(user: User):Observable<User>{
     return this.httpService.post<User>(this.baseURL,user);
   };
+  putUser(user: User):Observable<User>{
+    const url=this.baseURL+user.id;
+    return this.httpService.put<User>(url, user);
+  };
+  deleteUser(id: string):Observable<any>{
+    const url=this.baseURL+id;
+    return this.httpService.delete<any>(url);
+  };
+  patchUser(id:string, operations: Operation[]){
+    const url=this.baseURL+id;
+    return this.httpService.patch(url, operations);
+  }
 }
