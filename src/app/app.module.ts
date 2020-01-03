@@ -10,7 +10,8 @@ import { environment } from 'src/environments/environment';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './share/services/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     //NgbModule,
     //ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true //se indica que se pueden usar varios interceptores y no uno solo
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
